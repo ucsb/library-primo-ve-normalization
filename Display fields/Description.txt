@@ -1,8 +1,92 @@
+rule "Primo VE - Description 500"
+	when
+        MARC is "500"."a"
+	then
+        create pnx."display"."description" with MARC "500"."a"
+end
+
+rule "Primo VE - Description 501"
+	when
+        MARC is "501"."a"
+	then
+        create pnx."display"."description" with MARC "501"."a"
+end
+
+rule "Primo VE - Description 505"
+	when
+        MARC."505" has any "a,t"
+	then
+        create pnx."display"."description" with MARC "505" subfields "a,t"
+end
+
+rule "Primo VE - Description 508"
+	when
+        MARC is "508"."a"
+	then
+        create pnx."display"."description" with MARC "508"."a"
+end
+
+rule "Primo VE - Description 518"
+	when
+        MARC."518" has any "a,d,o,p"
+	then
+        create pnx."display"."description" with MARC "518" subfields "a,d,o,p"
+end
+
 rule "Primo VE - Description 520"
 	when
         MARC is "520"
 	then
         create pnx."display"."description" with MARC."520" excluding num subfields without sort
+end
+
+rule "Primo VE - Description 533"
+	when
+        MARC."533" has any "a,b,c,d,e,f,m"
+	then
+        set TEMP"1" to MARC "533" subfields "a,b,c,d,e,f,m"
+        add prefix (TEMP"1","Reproduction Note:^")
+        create pnx."display"."description" with TEMP"1"
+end
+
+rule "Primo VE - Description 534"
+	when
+        MARC."534" has any "a,b,c,e,f,k,l,m,n,o,p,t,x,z"
+	then
+        set TEMP"1" to MARC "534" subfields "a,b,c,e,f,k,l,m,n,o,p,t,x,z"
+        add prefix (TEMP"1","Reproduction Note:^")
+        create pnx."display"."description" with TEMP"1"
+end
+
+rule "Primo VE - Description 561"
+	when
+        MARC."561" has any "a,u,3"
+	then
+        set TEMP"1" to MARC "561" subfields "a,u,3"
+        add prefix (TEMP"1","Acquisitions/Ownership History:^")
+        create pnx."display"."description" with TEMP"1"
+end
+
+rule "Primo VE - Description 546"
+	when
+        MARC."546" has any "a,b"
+	then
+        create pnx."display"."description" with MARC "546" subfields "a,b"
+end
+
+rule "Primo VE - Description 590"
+	when
+        MARC is "590"."a"
+	then
+        create pnx."display"."description" with MARC "590"."a"
+end
+
+rule "Primo VE - Description 880-505"
+	when
+        MARC is "880" AND
+        MARC."880"."6" match "505-.*"
+	then
+        create pnx."display"."description" with MARC."880" excluding num subfields without sort
 end
 
 rule "Primo VE - Description 880-520"
@@ -11,4 +95,12 @@ rule "Primo VE - Description 880-520"
         MARC."880"."6" match "520-.*"
 	then
         create pnx."display"."description" with MARC."880" excluding num subfields without sort
+end
+
+rule "Primo VE - Description "
+	when
+        MARC is "" AND
+        MARC.""."" match ""
+	then
+        create pnx."display"."description" with MARC."" excluding num subfields without sort
 end
