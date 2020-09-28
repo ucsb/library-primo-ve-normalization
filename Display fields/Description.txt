@@ -12,6 +12,14 @@ rule "Primo VE - Description 501"
         create pnx."display"."description" with MARC "501"."a"
 end
 
+rule "Primo VE - Description 504"
+  priority 10
+	when
+        MARC is "504"."a"
+	then
+        create pnx."display"."description" with MARC "504"."a"
+end
+
 rule "Primo VE - Description 505"
 	when
         MARC."505" has any "a,t"
