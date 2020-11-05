@@ -63,6 +63,7 @@ rule "Primo VE - Genre 655"
         create pnx."display"."genre" with MARC."655"."v"
 end
 
+## Previously in Facets.Topic
 rule "Primo VE - Genre 656"
 	when
         MARC is "656"."v"
@@ -70,6 +71,7 @@ rule "Primo VE - Genre 656"
         create pnx."display"."genre" with MARC."656"."v"
 end
 
+## Overlapped with Facets.Topic in Backoffice config
 rule "Primo VE - Genre 657"
 	when
         MARC is "657"."v"
@@ -77,6 +79,7 @@ rule "Primo VE - Genre 657"
         create pnx."display"."genre" with MARC."657"."v"
 end
 
+## 880 rules were not previously in Backoffice for Facets
 rule "Primo VE - Genre 880-600"
 	when
         MARC is "880"."v" AND
