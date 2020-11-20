@@ -1,4 +1,5 @@
 rule "Primo VE Display - Subject 600"
+  priority 30
 	when
 		MARC."600" has any "a-u,w-z" AND NOT
 		MARC."600".ind"2"  equals "2"
@@ -13,6 +14,7 @@ rule "Primo VE Display - Subject 600"
 end
 
 rule "Primo VE Display- Subject 610"
+  priority 29
 	when
 		MARC."610" has any "a-u,w-z" AND NOT
 		MARC."610".ind"2"  equals "2"
@@ -27,6 +29,7 @@ rule "Primo VE Display- Subject 610"
 end
 
 rule "Primo VE Display- Subject 611"
+  priority 28
 	when
 		MARC."611" has any "a-u,w-z" AND NOT
 		MARC."611".ind"2"  equals "2"
@@ -41,6 +44,7 @@ rule "Primo VE Display- Subject 611"
 end
 
 rule "Primo VE Display- Subject 630"
+  priority 25
 	when
 		MARC."630" has any "a-u,w-z" AND NOT
 		MARC."630".ind"2"  equals "2"
@@ -56,6 +60,7 @@ rule "Primo VE Display- Subject 630"
 end
 
 rule "Primo VE Display- Subject 648"
+  priority 24
 	when
 		MARC."648" has any "a-u,w-z" AND NOT
 		MARC."648".ind"2"  equals "2"
@@ -70,6 +75,7 @@ rule "Primo VE Display- Subject 648"
 end
 
 rule "Primo VE Display- Subject 650"
+  priority 27
 	when
 		MARC."650" has any "a-u,w-z" AND NOT
 		MARC."650".ind"2"  equals "2"
@@ -84,6 +90,7 @@ rule "Primo VE Display- Subject 650"
 end
 
 rule "Prima_Display - Subject 651"
+  priority 26
 	when
 		MARC."651" has any "a-u,w-z" AND NOT
 		MARC."651".ind"2"  equals "2"  
@@ -99,6 +106,7 @@ end
 
 
 rule "Primo VE Display- Subject 653"
+  priority 23
 	when
 		MARC."653" has any "a-u,w"
 	then
@@ -109,6 +117,7 @@ rule "Primo VE Display- Subject 653"
 end
 
 rule "Primo VE Display- Subject 654"
+  priority 22
 	when
 		MARC."654" has any "a-u,w-z"
 	then
@@ -122,6 +131,7 @@ rule "Primo VE Display- Subject 654"
 end
 
 rule "Primo VE Display- Subject 655"
+  priority 21
 	when
 		MARC."655" has any "a-u,w-z" AND NOT
 		MARC."655".ind"2"  equals "2"
@@ -136,6 +146,7 @@ rule "Primo VE Display- Subject 655"
 end
 
 rule "Primo VE Display- Subject 656"
+  priority 20
 	when
 		MARC."656" has any "a-u,w-z"
 	then
@@ -149,6 +160,7 @@ rule "Primo VE Display- Subject 656"
 end
 
 rule "Primo VE Display- Subject 657"
+  priority 19
 	when
 		MARC."657" has any "a-u,w-z"
 	then
@@ -162,6 +174,7 @@ rule "Primo VE Display- Subject 657"
 end
 
 rule "Primo VE Display- Subject 658"
+  priority 18
 	when
 		MARC."658" has any "a-u,w"
 	then
@@ -171,17 +184,8 @@ rule "Primo VE Display- Subject 658"
         create pnx."display"."subject" with TEMP"1"
 end
 
-rule "Primo VE Display- Subject 662"
-	when
-		MARC."662" has any "a-u,w"
-	then
-		set TEMP"1" to MARC."662" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
-		set TEMP"2" to multilingual by "662" "Subject" "display"
-		concatenate with delimiter (TEMP"1",TEMP"2","")
-        create pnx."display"."subject" with TEMP"1"
-end
-
 rule "Primo VE Display- Subject 690"
+  priority 17
 	when
 		MARC."690" has any "a-u,w-z"
 	then
@@ -371,17 +375,6 @@ rule "Primo VE Display- Subject 880-658"
 	when
 		MARC."880" has any "a-u,w" AND
 		MARC."880"."6" match "658-.*"
-	then
-		set TEMP"1" to MARC."880" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
-        set TEMP"2" to multilingual by "880" "Subject" "display"
-		concatenate with delimiter (TEMP"1",TEMP"2","")
-        create pnx."display"."subject" with TEMP"1"
-end
-
-rule "Primo VE Display- Subject 880-662"
-	when
-		MARC."880" has any "a-u,w" AND
-		MARC."880"."6" match "662-.*"
 	then
 		set TEMP"1" to MARC."880" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
         set TEMP"2" to multilingual by "880" "Subject" "display"
