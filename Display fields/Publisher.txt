@@ -1,5 +1,5 @@
 rule "Primo VE - publisher 260/3"
-priority 10
+priority 90
 	when
 		MARC."260" has any "a,b" AND
 		MARC."260".ind"1"  equals "3"
@@ -18,7 +18,7 @@ priority 10
 end
 
 rule "Primo VE - publisher 264/3/1"
-priority 20
+priority 80
 	when
 		MARC."264" has any "a,b" AND
 		MARC."264".ind"1"  equals "3" AND
@@ -38,7 +38,7 @@ priority 20
 end
 
 rule "Primo VE - publisher 260"
-priority 30
+priority 70
 	when
 		MARC."260" has any "a,b"
 	then
@@ -56,7 +56,7 @@ priority 30
 end
 
 rule "Primo VE - publisher 264"
-priority 40
+priority 60
 	when
 		MARC."264" has any "a,b"
 	then
@@ -71,6 +71,16 @@ priority 40
         remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
         replace spaces (TEMP"1"," ")
 		set pnx."display"."publisher" to TEMP"1"
+end
+
+rule "Primo VE - publisher 502"
+  priority 100
+	when
+        MARC is "502"."a"
+	then
+        set TEMP"1" to MARC."502" subfields "a"
+        add suffix (TEMP"1","<br><br>")
+        create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Alternate Publisher 880-260/3"
@@ -146,11 +156,4 @@ priority 40
         remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
         replace spaces (TEMP"1"," ")
 		set pnx."display"."alternate_publisher" to TEMP"1"
-end
-
-rule "Primo VE - publisher notes 362"
-	when
-		MARC."362" has any "a,z"
-	then
-		create pnx."display"."publisher_notes" with MARC."362" sub without sort "a,z"
 end
