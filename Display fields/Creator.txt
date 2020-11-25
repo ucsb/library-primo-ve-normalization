@@ -1,5 +1,5 @@
 rule "Primo VE Display - Creator 100"
-priority 10
+priority 30
 	when
 		MARC."100" has any "a,b,c"
 	then
@@ -31,7 +31,7 @@ priority 20
 end
 
 rule "Primo VE Display - Creator 111"
-priority 30
+priority 10
 	when
 		MARC."111" has any "a,b,c"
 	then
@@ -47,7 +47,7 @@ priority 30
 end
 
 rule "Primo VE Display - alternate creator 880-100"
-priority 10
+priority 30
 	when
 		MARC."880" has any "a,b,c,d,n" AND
 		MARC."880"."6" match "100-.*"
@@ -81,7 +81,7 @@ priority 20
 end
 
 rule "Primo VE Display - alternate creator 880-111"
-priority 30
+priority 10
 	when
 		MARC."880" has any "a,b,c,d,n" AND
 		MARC."880"."6" match "111-.*"
