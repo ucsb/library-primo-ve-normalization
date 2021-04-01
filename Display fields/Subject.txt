@@ -1,5 +1,5 @@
 rule "Primo VE Display - Subject 600"
-  priority 30
+  priority 0
 	when
 		MARC."600" has any "a-u,w-z" AND NOT
 		MARC."600".ind"2"  equals "2"
@@ -14,7 +14,7 @@ rule "Primo VE Display - Subject 600"
 end
 
 rule "Primo VE Display- Subject 610"
-  priority 29
+  priority 1
 	when
 		MARC."610" has any "a-u,w-z" AND NOT
 		MARC."610".ind"2"  equals "2"
@@ -29,7 +29,7 @@ rule "Primo VE Display- Subject 610"
 end
 
 rule "Primo VE Display- Subject 611"
-  priority 28
+  priority 2
 	when
 		MARC."611" has any "a-u,w-z" AND NOT
 		MARC."611".ind"2"  equals "2"
@@ -44,7 +44,7 @@ rule "Primo VE Display- Subject 611"
 end
 
 rule "Primo VE Display- Subject 630"
-  priority 25
+  priority 5
 	when
 		MARC."630" has any "a-u,w-z" AND NOT
 		MARC."630".ind"2"  equals "2"
@@ -60,7 +60,7 @@ rule "Primo VE Display- Subject 630"
 end
 
 rule "Primo VE Display- Subject 648"
-  priority 24
+  priority 6
 	when
 		MARC."648" has any "a-u,w-z" AND NOT
 		MARC."648".ind"2"  equals "2"
@@ -75,7 +75,7 @@ rule "Primo VE Display- Subject 648"
 end
 
 rule "Primo VE Display- Subject 650"
-  priority 27
+  priority 3
 	when
 		MARC."650" has any "a-u,w-z" AND NOT
 		MARC."650".ind"2"  equals "2"
@@ -90,7 +90,7 @@ rule "Primo VE Display- Subject 650"
 end
 
 rule "Prima_Display - Subject 651"
-  priority 26
+  priority 4
 	when
 		MARC."651" has any "a-u,w-z" AND NOT
 		MARC."651".ind"2"  equals "2"  
@@ -106,7 +106,7 @@ end
 
 
 rule "Primo VE Display- Subject 653"
-  priority 23
+  priority 7
 	when
 		MARC."653" has any "a-u,w"
 	then
@@ -117,7 +117,7 @@ rule "Primo VE Display- Subject 653"
 end
 
 rule "Primo VE Display- Subject 654"
-  priority 22
+  priority 8
 	when
 		MARC."654" has any "a-u,w-z"
 	then
@@ -131,7 +131,7 @@ rule "Primo VE Display- Subject 654"
 end
 
 rule "Primo VE Display- Subject 655"
-  priority 21
+  priority 9
 	when
 		MARC."655" has any "a-u,w-z" AND NOT
 		MARC."655".ind"2"  equals "2"
@@ -146,7 +146,7 @@ rule "Primo VE Display- Subject 655"
 end
 
 rule "Primo VE Display- Subject 656"
-  priority 20
+  priority 10
 	when
 		MARC."656" has any "a-u,w-z"
 	then
@@ -160,7 +160,7 @@ rule "Primo VE Display- Subject 656"
 end
 
 rule "Primo VE Display- Subject 657"
-  priority 19
+  priority 11
 	when
 		MARC."657" has any "a-u,w-z"
 	then
@@ -174,7 +174,7 @@ rule "Primo VE Display- Subject 657"
 end
 
 rule "Primo VE Display- Subject 658"
-  priority 18
+  priority 12
 	when
 		MARC."658" has any "a-u,w"
 	then
@@ -185,7 +185,7 @@ rule "Primo VE Display- Subject 658"
 end
 
 rule "Primo VE Display- Subject 690"
-  priority 17
+  priority 13
 	when
 		MARC."690" has any "a-u,w-z"
 	then

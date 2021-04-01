@@ -1,0 +1,27 @@
+rule "Primo VE - Rights 506"
+	when
+        MARC."506" has any "3,a-g,q,u,5"
+	then
+    set TEMP"1" to MARC "506" subfields "3,a-g,q,u,5"
+    add suffix (TEMP"1","<br class='note'><br class='note'>")
+    create pnx."display"."rights" with TEMP"1"
+end
+
+rule "Primo VE - Rights 540"
+	when
+        MARC."540" has any "a-g,q,u,3,5"
+	then
+    set TEMP"1" to MARC "540" subfields "3,a-g,q,u,5"
+    add suffix (TEMP"1","<br class='note'><br class='note'>")
+    create pnx."display"."rights" with TEMP"1"
+end
+
+rule "Primo VE - Rights 542"
+	when
+        MARC."542" has any "3,a-s,u" AND NOT
+        MARC."542".ind"1" equals "0"
+	then
+    set TEMP"1" to MARC "542" subfields "3,a-s,u"
+    add suffix (TEMP"1","<br class='note'><br class='note'>")
+    create pnx."display"."rights" with TEMP"1"
+end
