@@ -72,7 +72,7 @@ rule "Primo VE Display - alternate contributor 880-700"
   then
     set TEMP"1" to MARC."880" sub without sort "a,b,c,d,e,j,q,u"
         remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
-    set TEMP"2" to MARC."880" sub without sort "a"
+    set TEMP"2" to MARC."880" sub without sort "a,d"
         remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
         add prefix (TEMP"2","$$Q")
         remove substring using regex (TEMP"2","^$$Q$")
