@@ -43,6 +43,51 @@ rule "Primo VE Display - Creator 111"
 		set pnx."display"."creator" to TEMP"1"
 end
 
+rule "Primo VE Display - Creator 970"
+	when
+		MARC."970" has any "a,b,c"
+	then
+		set TEMP"1" to MARC."970" excluding num subfields without sort
+		set TEMP"2" to MARC."970" sub without sort "a"
+		remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+        add prefix (TEMP"2","$$Q")
+        remove substring using regex (TEMP"2","^$$Q$")
+        concatenate with delimiter (TEMP"1",TEMP"2","")
+        set TEMP"3" to multilingual by "970" "Creator" "display"
+		concatenate with delimiter (TEMP"1",TEMP"3","")
+		set pnx."display"."creator" to TEMP"1"
+end
+
+rule "Primo VE Display - Creator 971"
+	when
+		MARC."971" has any "a,b,c"
+	then
+		set TEMP"1" to MARC."971" excluding num subfields without sort
+		set TEMP"2" to MARC."971" sub without sort "a"
+		remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+        add prefix (TEMP"2","$$Q")
+        remove substring using regex (TEMP"2","^$$Q$")
+        concatenate with delimiter (TEMP"1",TEMP"2","")
+        set TEMP"3" to multilingual by "971" "Creator" "display"
+		concatenate with delimiter (TEMP"1",TEMP"3","")
+		set pnx."display"."creator" to TEMP"1"
+end
+
+rule "Primo VE Display - Creator 972"
+	when
+		MARC."972" has any "a,b,c"
+	then
+		set TEMP"1" to MARC."972" excluding num subfields without sort
+		set TEMP"2" to MARC."972" sub without sort "a"
+		remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+        add prefix (TEMP"2","$$Q")
+        remove substring using regex (TEMP"2","^$$Q$")
+        concatenate with delimiter (TEMP"1",TEMP"2","")
+        set TEMP"3" to multilingual by "972" "Creator" "display"
+		concatenate with delimiter (TEMP"1",TEMP"3","")
+		set pnx."display"."creator" to TEMP"1"
+end
+
 rule "Primo VE Display - alternate creator 880-100"
 	when
 		MARC."880" has any "a,b,c,d,n" AND

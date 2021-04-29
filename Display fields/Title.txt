@@ -1,0 +1,21 @@
+rule "Primo VE - Title"
+  when
+      MARCRECORD AND
+      MARC."245" has any "c" AND
+          (MARC.control."LDR"(6-7) matches "i|j" OR
+              (MARC.control."LDR"(6-7) equals "m" AND
+              MARC.control."008"(26-27) equals "h"))
+  then
+      create pnx."display"."title" with MARC "245" sub without sort "c"
+end
+
+rule "Primo VE - Title1"
+	when
+		MARCRECORD
+	then
+	    set TEMP"1" to prima display title
+        remove string (TEMP"1","<<")
+        remove string (TEMP"1",">>")
+        remove substring using regex (TEMP"1","(,|/|:|;|=)+$")
+		create pnx."display"."title" with TEMP"1"
+end
