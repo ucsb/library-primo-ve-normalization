@@ -187,22 +187,13 @@ rule "Primo VE - Description 580"
 end
 
 rule "Primo VE - Description 581"
-  priority 12
+  priority 22
 	when
     MARC."581" has any "a-z"
 	then
     set TEMP"1" to MARC "581" excluding num subfields without sort
     add suffix (TEMP"1","<br class='note'><br class='note'>")
-    create pnx."display"."description" with TEMP"1"
-end
-
-rule "Primo VE - Description 583"
-  priority 13
-	when
-    MARC."583" has any "a-z"
-	then
-    set TEMP"1" to MARC "583" excluding num subfields without sort
-    add suffix (TEMP"1","<br class='note'><br class='note'>")
+    add prefix (TEMP"1","<i>Publications about Described Materials</i>: ")
     create pnx."display"."description" with TEMP"1"
 end
 

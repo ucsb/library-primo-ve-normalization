@@ -2,8 +2,8 @@ rule "Primo VE - Format 300"
 	when
 		MARC is "300"
 	then
-	    set TEMP"1" to MARC."300" excluding num subfields without sort
-	    add prefix (TEMP"1","300 ")
+		set TEMP"1" to MARC."300" excluding num subfields without sort
+			add prefix (TEMP"1","300 ")
 		create pnx."display"."format" with TEMP"1"
 end
 
@@ -11,8 +11,8 @@ rule "Primo VE - Format 340"
 	when
 		MARC is "340"
 	then
-	    set TEMP"1" to MARC."340" excluding num subfields without sort
-	    add prefix (TEMP"1","340 ")
+		set TEMP"1" to MARC."340" excluding num subfields without sort
+			add prefix (TEMP"1","340 ")
 		create pnx."display"."format" with TEMP"1"
 end
 
@@ -20,7 +20,18 @@ rule "Primo VE - Format 351"
 	when
 		MARC is "351"
 	then
-	    set TEMP"1" to MARC."351" excluding num subfields without sort
-	    add prefix (TEMP"1","351 ")
+		set TEMP"1" to MARC."351" excluding num subfields without sort
+			add prefix (TEMP"1","351 ")
+		create pnx."display"."format" with TEMP"1"
+end
+
+rule "Primo VE - Format 362"
+	when
+		MARC is "362" AND (
+			MARC."362".ind"1" equals "0" OR
+			MARC."362".ind"1" equals "1")
+	then
+		set TEMP"1" to MARC."362" excluding num subfields without sort
+			add prefix (TEMP"1","362 ")
 		create pnx."display"."format" with TEMP"1"
 end

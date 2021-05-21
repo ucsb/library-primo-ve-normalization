@@ -1,0 +1,7 @@
+rule "Primo VE - Lds11"
+  when
+    MARC."973" has any "a-z" AND
+    MARC."973".ind"2" equals "2"
+  then
+    create pnx."display"."lds11" with MARC "973" subfields "a-z"
+end
