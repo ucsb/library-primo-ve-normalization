@@ -1,5 +1,4 @@
 rule "Primo VE Display - Subject 600"
-  priority 0
   when
       MARC."600" has any "a-u,w-z" AND NOT
       MARC."600".ind"2"  equals "2"
@@ -14,7 +13,6 @@ rule "Primo VE Display - Subject 600"
 end
 
 rule "Primo VE Display- Subject 610"
-  priority 1
   when
     MARC."610" has any "a-u,w-z" AND NOT
     MARC."610".ind"2"  equals "2"
@@ -29,7 +27,6 @@ rule "Primo VE Display- Subject 610"
 end
 
 rule "Primo VE Display- Subject 611"
-  priority 2
   when
     MARC."611" has any "a-u,w-z" AND NOT
     MARC."611".ind"2"  equals "2"
@@ -44,7 +41,6 @@ rule "Primo VE Display- Subject 611"
 end
 
 rule "Primo VE Display- Subject 630"
-  priority 5
   when
     MARC."630" has any "a-u,w-z" AND NOT
     MARC."630".ind"2"  equals "2"
@@ -60,7 +56,6 @@ rule "Primo VE Display- Subject 630"
 end
 
 rule "Primo VE Display- Subject 650"
-  priority 3
   when
     MARC."650" has any "a-u,w-z" AND NOT
     MARC."650".ind"2"  equals "2"
@@ -75,7 +70,6 @@ rule "Primo VE Display- Subject 650"
 end
 
 rule "Prima_Display - Subject 651"
-  priority 4
   when
     MARC."651" has any "a-u,w-z" AND NOT
     MARC."651".ind"2"  equals "2"  
@@ -90,7 +84,6 @@ rule "Prima_Display - Subject 651"
 end
 
 rule "Primo VE Display- Subject 690"
-  priority 13
   when
     MARC."690" has any "a-u,w-z"
   then
@@ -100,6 +93,63 @@ rule "Primo VE Display- Subject 690"
         concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "690" "Subject" "display"
         concatenate with delimiter (TEMP"1",TEMP"3","")
+    create pnx."display"."subject" with TEMP"1"
+end
+
+rule "Primo VE Display - Subject 696"
+  when
+      MARC."696" has any "a-u,w-z" AND NOT
+      MARC."696".ind"2"  equals "2"
+  then
+      set TEMP"1" to MARC."696" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
+      set TEMP"2" to MARC."696" sub without sorting "x-z" delimited by " -- "
+          remove substring using regex (TEMP"2","\\.+$")		
+          concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      set TEMP"3" to multilingual by "696" "Subject" "display"
+          concatenate with delimiter (TEMP"1",TEMP"3","")
+      create pnx."display"."subject" with TEMP"1"
+end
+
+rule "Primo VE Display- Subject 697"
+  when
+    MARC."697" has any "a-u,w-z" AND NOT
+    MARC."697".ind"2"  equals "2"
+	then
+    set TEMP"1" to MARC."697" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
+    set TEMP"2" to MARC."697" sub without sorting "x-z" delimited by " -- "
+        remove substring using regex (TEMP"2","\\.+$")		
+        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+    set TEMP"3" to multilingual by "697" "Subject" "display"
+        concatenate with delimiter (TEMP"1",TEMP"3","")
+    create pnx."display"."subject" with TEMP"1"
+end
+
+rule "Primo VE Display- Subject 698"
+  when
+    MARC."698" has any "a-u,w-z" AND NOT
+    MARC."698".ind"2"  equals "2"
+  then
+    set TEMP"1" to MARC."698" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
+    set TEMP"2" to MARC."698" sub without sorting "x-z" delimited by " -- "
+        remove substring using regex (TEMP"2","\\.+$")		
+        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+    set TEMP"3" to multilingual by "698" "Subject" "display"
+        concatenate with delimiter (TEMP"1",TEMP"3","")
+    create pnx."display"."subject" with TEMP"1"
+end
+
+rule "Primo VE Display- Subject 699"
+  when
+    MARC."699" has any "a-u,w-z" AND NOT
+    MARC."699".ind"2"  equals "2"
+  then
+    set TEMP"1" to MARC."699" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
+    set TEMP"2" to MARC."699" sub without sorting "x-z" delimited by " -- "
+        remove substring using regex (TEMP"2","\\.+$")		
+        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+        kormarc remove nonfiling brackets MARC."699" sourcetag "699" from TEMP"1"
+    set TEMP"3" to multilingual by "699" "Subject" "display"
+        concatenate with delimiter (TEMP"1",TEMP"3","") 
     create pnx."display"."subject" with TEMP"1"
 end
 
