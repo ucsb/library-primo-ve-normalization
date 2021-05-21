@@ -96,6 +96,20 @@ rule "Primo VE Display- Subject 690"
     create pnx."display"."subject" with TEMP"1"
 end
 
+rule "Prima_Display - Subject 691"
+  when
+    MARC."691" has any "a-u,w-z" AND NOT
+    MARC."691".ind"2"  equals "2"  
+  then
+    set TEMP"1" to MARC."691" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
+    set TEMP"2" to MARC."691" sub without sorting "x-z" delimited by " -- "
+        remove substring using regex (TEMP"2","\\.+$")
+        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+    set TEMP"3" to multilingual by "691" "Subject" "display"
+        concatenate with delimiter (TEMP"1",TEMP"3","")
+    create operational."prima_display"."subject" with TEMP"1"
+end
+
 rule "Primo VE Display - Subject 696"
   when
       MARC."696" has any "a-u,w-z" AND NOT
