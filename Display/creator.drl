@@ -6,12 +6,12 @@ rule "Primo VE Display - Creator 100"
   then
     set TEMP"1" to MARC."100" excluding num subfields without sort
     set TEMP"2" to MARC."100" sub without sort "a,d"
-      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
-      add prefix (TEMP"2","$$Q")
-      remove substring using regex (TEMP"2","^$$Q$")
-      concatenate with delimiter (TEMP"1",TEMP"2","")
+        remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
+        add prefix (TEMP"2","$$Q")
+        remove substring using regex (TEMP"2","^$$Q$")
+        concatenate with delimiter (TEMP"1",TEMP"2","")
     set TEMP"3" to multilingual by "100" "Creator" "display"
-      concatenate with delimiter (TEMP"1",TEMP"3","")
+        concatenate with delimiter (TEMP"1",TEMP"3","")
     set pnx."display"."creator" to TEMP"1"
 end
 
@@ -21,11 +21,11 @@ rule "Primo VE - Creator 110"
 	then
 		set TEMP"1" to MARC."110" excluding num subfields without sort
 		set TEMP"2" to MARC."110" sub without sort "a,b"
-			remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
-      add prefix (TEMP"2","$$Q")
-      remove substring using regex (TEMP"2","^$$Q$")
-      concatenate with delimiter (TEMP"1",TEMP"2","")
-      set TEMP"3" to multilingual by "110" "Creator" "display"
+		remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+        add prefix (TEMP"2","$$Q")
+        remove substring using regex (TEMP"2","^$$Q$")
+        concatenate with delimiter (TEMP"1",TEMP"2","")
+        set TEMP"3" to multilingual by "110" "Creator" "display"
 		concatenate with delimiter (TEMP"1",TEMP"3","")
 		set pnx."display"."creator" to TEMP"1"
 end
@@ -36,56 +36,11 @@ rule "Primo VE Display - Creator 111"
 	then
 		set TEMP"1" to MARC."111" excluding num subfields without sort
 		set TEMP"2" to MARC."111" sub without sort "a"
-			remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
-      add prefix (TEMP"2","$$Q")
-      remove substring using regex (TEMP"2","^$$Q$")
-      concatenate with delimiter (TEMP"1",TEMP"2","")
-      set TEMP"3" to multilingual by "111" "Creator" "display"
-		concatenate with delimiter (TEMP"1",TEMP"3","")
-		set pnx."display"."creator" to TEMP"1"
-end
-
-rule "Primo VE Display - Creator 970"
-	when
-		MARC."970" has any "a,b,c"
-	then
-		set TEMP"1" to MARC."970" excluding num subfields without sort
-		set TEMP"2" to MARC."970" sub without sort "a"
-			remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
-      add prefix (TEMP"2","$$Q")
-      remove substring using regex (TEMP"2","^$$Q$")
-      concatenate with delimiter (TEMP"1",TEMP"2","")
-      set TEMP"3" to multilingual by "970" "Creator" "display"
-		concatenate with delimiter (TEMP"1",TEMP"3","")
-		set pnx."display"."creator" to TEMP"1"
-end
-
-rule "Primo VE Display - Creator 971"
-	when
-		MARC."971" has any "a,b,c"
-	then
-		set TEMP"1" to MARC."971" excluding num subfields without sort
-		set TEMP"2" to MARC."971" sub without sort "a"
-			remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
-      add prefix (TEMP"2","$$Q")
-      remove substring using regex (TEMP"2","^$$Q$")
-      concatenate with delimiter (TEMP"1",TEMP"2","")
-      set TEMP"3" to multilingual by "971" "Creator" "display"
-		concatenate with delimiter (TEMP"1",TEMP"3","")
-		set pnx."display"."creator" to TEMP"1"
-end
-
-rule "Primo VE Display - Creator 972"
-	when
-		MARC."972" has any "a,b,c"
-	then
-		set TEMP"1" to MARC."972" excluding num subfields without sort
-		set TEMP"2" to MARC."972" sub without sort "a"
-			remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
-      add prefix (TEMP"2","$$Q")
-      remove substring using regex (TEMP"2","^$$Q$")
-      concatenate with delimiter (TEMP"1",TEMP"2","")
-      set TEMP"3" to multilingual by "972" "Creator" "display"
+		remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+        add prefix (TEMP"2","$$Q")
+        remove substring using regex (TEMP"2","^$$Q$")
+        concatenate with delimiter (TEMP"1",TEMP"2","")
+        set TEMP"3" to multilingual by "111" "Creator" "display"
 		concatenate with delimiter (TEMP"1",TEMP"3","")
 		set pnx."display"."creator" to TEMP"1"
 end
@@ -95,12 +50,12 @@ rule "Primo VE Display - alternate creator 880-100"
 		MARC."880" has any "a,b,c,d,n" AND
 		MARC."880"."6" match "100-.*"
 	then
-	  set TEMP"1" to MARC."880" excluding num subfields without sort
+	    set TEMP"1" to MARC."880" excluding num subfields without sort
 		set TEMP"2" to MARC."880" sub without sort "a,d"
-			remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
-      add prefix (TEMP"2","$$Q")
-      remove substring using regex (TEMP"2","^$$Q$")
-      concatenate with delimiter (TEMP"1",TEMP"2","")
+		remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
+        add prefix (TEMP"2","$$Q")
+        remove substring using regex (TEMP"2","^$$Q$")
+        concatenate with delimiter (TEMP"1",TEMP"2","")
 		set TEMP"3" to multilingual by "880" "Creator" "display"
 		concatenate with delimiter (TEMP"1",TEMP"3","")
 		set pnx."display"."alternate_creator" to TEMP"1"
@@ -111,12 +66,12 @@ rule "Primo VE Display - alternate creator 880-110"
 		MARC."880" has any "a,b,c,d,n" AND
 		MARC."880"."6" match "110-.*"
 	then
-	  set TEMP"1" to MARC."880" excluding num subfields without sort
+	    set TEMP"1" to MARC."880" excluding num subfields without sort
 		set TEMP"2" to MARC."880" sub without sort "a,b"
-			remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
-      add prefix (TEMP"2","$$Q")
-      remove substring using regex (TEMP"2","^$$Q$")
-      concatenate with delimiter (TEMP"1",TEMP"2","")
+		remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+        add prefix (TEMP"2","$$Q")
+        remove substring using regex (TEMP"2","^$$Q$")
+        concatenate with delimiter (TEMP"1",TEMP"2","")
 		set TEMP"3" to multilingual by "880" "Creator" "display"
 		concatenate with delimiter (TEMP"1",TEMP"3","")
 		set pnx."display"."alternate_creator" to TEMP"1"
@@ -127,12 +82,12 @@ rule "Primo VE Display - alternate creator 880-111"
 		MARC."880" has any "a,b,c,d,n" AND
 		MARC."880"."6" match "111-.*"
 	then
-	  set TEMP"1" to MARC."880" excluding num subfields without sort
+	    set TEMP"1" to MARC."880" excluding num subfields without sort
 		set TEMP"2" to MARC."880" sub without sort "a"
-			remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
-      add prefix (TEMP"2","$$Q")
-      remove substring using regex (TEMP"2","^$$Q$")
-      concatenate with delimiter (TEMP"1",TEMP"2","")
+		remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+        add prefix (TEMP"2","$$Q")
+        remove substring using regex (TEMP"2","^$$Q$")
+        concatenate with delimiter (TEMP"1",TEMP"2","")
 		set TEMP"3" to multilingual by "880" "Creator" "display"
 		concatenate with delimiter (TEMP"1",TEMP"3","")
 		set pnx."display"."alternate_creator" to TEMP"1"

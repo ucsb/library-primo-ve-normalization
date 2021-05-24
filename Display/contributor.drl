@@ -53,7 +53,7 @@ rule "Primo VE Display - contributor 796"
   when
       MARC."796" has any "a-z"
   then
-    set TEMP"1" to MARC."796" excluding num subfields without sort
+    set TEMP"1" to MARC."796" subfields
         replace string by string (TEMP"1",";","^")
     create pnx."display"."contributor" with TEMP"1"
 end
@@ -62,7 +62,35 @@ rule "Primo VE Display - contributor 797"
   when
       MARC."797" has any "a-z"
   then
-    set TEMP"1" to MARC."797" excluding num subfields without sort
+    set TEMP"1" to MARC."797" subfields
+        replace string by string (TEMP"1",";","^")
+    create pnx."display"."contributor" with TEMP"1"
+end
+
+
+rule "Primo VE Display - Creator 970"
+  when
+      MARC."970" has any "a-z"
+  then
+    set TEMP"1" to MARC."970" subfields
+        replace string by string (TEMP"1",";","^")
+    create pnx."display"."contributor" with TEMP"1"
+end
+
+rule "Primo VE Display - Creator 971"
+  when
+      MARC."971" has any "a-z"
+  then
+    set TEMP"1" to MARC."971" subfields
+        replace string by string (TEMP"1",";","^")
+    create pnx."display"."contributor" with TEMP"1"
+end
+
+rule "Primo VE Display - Creator 972"
+  when
+      MARC."972" has any "a-z"
+  then
+    set TEMP"1" to MARC."972" subfields
         replace string by string (TEMP"1",";","^")
     create pnx."display"."contributor" with TEMP"1"
 end
