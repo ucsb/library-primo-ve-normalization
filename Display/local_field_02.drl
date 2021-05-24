@@ -1,0 +1,8 @@
+## Display: Historical Note
+
+rule "Primo VE - Lds02"
+  when
+    MARC is "545"."a"
+  then
+    create pnx."display"."lds02" with MARC "545"."a"
+end
