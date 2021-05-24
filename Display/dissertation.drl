@@ -9,8 +9,8 @@ end
 
 rule "Primo VE - Dissertation 880-502"
 	when
-        MARC is "880" AND
-        MARC."880"."6" match "502-.*"
+    MARC is "880" AND
+    MARC."880"."6" match "502-.*"
 	then
-        create pnx."display"."description" with MARC."880" excluding num subfields without sort
+    create pnx."display"."description" with MARC."880" excluding num subfields without sort
 end
