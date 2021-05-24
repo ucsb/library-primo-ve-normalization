@@ -1,0 +1,8 @@
+## Facets disabled
+
+rule "Primo VE Marc - Lsr01"
+  when
+    MARC is "511"."a"
+  then
+    create pnx."search"."lsr01" with MARC "511"."a"
+end
