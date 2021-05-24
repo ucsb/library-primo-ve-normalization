@@ -1,0 +1,8 @@
+## Display: Cite As
+
+rule "Primo VE - Lds06"
+  when
+    MARC is "524"."a"
+  then
+    create pnx."display"."lds06" with MARC "524"."a"
+end
