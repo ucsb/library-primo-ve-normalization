@@ -1,3 +1,5 @@
+## Display: Title
+
 rule "Primo VE - Title"
   when
       MARCRECORD AND

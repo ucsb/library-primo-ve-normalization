@@ -1,3 +1,5 @@
+## Display: Access/Restrictions
+
 rule "Primo VE - Rights 506"
 	when
         MARC."506" has any "3,a-g,q,u,5"

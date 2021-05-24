@@ -1,3 +1,5 @@
+## Display: Series
+
 rule "Primo VE - Series 400"
 	when
 		MARC."400" has any "a"
