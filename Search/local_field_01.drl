@@ -1,4 +1,4 @@
-## Facets disabled
+## facets off
 
 rule "Primo VE Marc - Lsr01"
   when
