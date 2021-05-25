@@ -2,16 +2,16 @@
 
 rule "Primo VE Display - Subject 600"
   when
-      MARC."600" has any "a-u,w-z" AND NOT
-      MARC."600".ind"2"  equals "2"
+    MARC."600" has any "a-u,w-z" AND NOT
+    MARC."600".ind"2"  equals "2"
   then
-      set TEMP"1" to MARC."600" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
-      set TEMP"2" to MARC."600" sub without sorting "x-z" delimited by " -- "
-          remove substring using regex (TEMP"2","\\.+$")		
-          concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
-      set TEMP"3" to multilingual by "600" "Subject" "display"
-          concatenate with delimiter (TEMP"1",TEMP"3","")
-      create pnx."display"."subject" with TEMP"1"
+    set TEMP"1" to MARC."600" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
+    set TEMP"2" to MARC."600" sub without sorting "x-z" delimited by " -- "
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+    set TEMP"3" to multilingual by "600" "Subject" "display"
+      concatenate with delimiter (TEMP"1",TEMP"3","")
+    create pnx."display"."subject" with TEMP"1"
 end
 
 rule "Primo VE Display- Subject 610"
@@ -21,10 +21,10 @@ rule "Primo VE Display- Subject 610"
 	then
     set TEMP"1" to MARC."610" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."610" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")		
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "610" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","")
+      concatenate with delimiter (TEMP"1",TEMP"3","")
     create pnx."display"."subject" with TEMP"1"
 end
 
@@ -35,10 +35,10 @@ rule "Primo VE Display- Subject 611"
   then
     set TEMP"1" to MARC."611" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."611" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")		
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "611" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","")
+      concatenate with delimiter (TEMP"1",TEMP"3","")
     create pnx."display"."subject" with TEMP"1"
 end
 
@@ -49,11 +49,11 @@ rule "Primo VE Display- Subject 630"
   then
     set TEMP"1" to MARC."630" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."630" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")		
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
-        kormarc remove nonfiling brackets MARC."630" sourcetag "630" from TEMP"1"
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      kormarc remove nonfiling brackets MARC."630" sourcetag "630" from TEMP"1"
     set TEMP"3" to multilingual by "630" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","") 
+      concatenate with delimiter (TEMP"1",TEMP"3","") 
     create pnx."display"."subject" with TEMP"1"
 end
 
@@ -64,10 +64,10 @@ rule "Primo VE Display- Subject 650"
   then
     set TEMP"1" to MARC."650" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."650" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")		
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "650" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","")
+      concatenate with delimiter (TEMP"1",TEMP"3","")
     create pnx."display"."subject" with TEMP"1"
 end
 
@@ -78,10 +78,10 @@ rule "Prima_Display - Subject 651"
   then
     set TEMP"1" to MARC."651" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."651" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "651" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","")
+      concatenate with delimiter (TEMP"1",TEMP"3","")
     create operational."prima_display"."subject" with TEMP"1"
 end
 
@@ -91,10 +91,10 @@ rule "Primo VE Display- Subject 690"
   then
     set TEMP"1" to MARC."690" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."690" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")		
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "690" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","")
+      concatenate with delimiter (TEMP"1",TEMP"3","")
     create pnx."display"."subject" with TEMP"1"
 end
 
@@ -105,25 +105,25 @@ rule "Prima_Display - Subject 691"
   then
     set TEMP"1" to MARC."691" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."691" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "691" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","")
+      concatenate with delimiter (TEMP"1",TEMP"3","")
     create operational."prima_display"."subject" with TEMP"1"
 end
 
 rule "Primo VE Display - Subject 696"
   when
-      MARC."696" has any "a-u,w-z" AND NOT
-      MARC."696".ind"2"  equals "2"
+    MARC."696" has any "a-u,w-z" AND NOT
+    MARC."696".ind"2"  equals "2"
   then
-      set TEMP"1" to MARC."696" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
-      set TEMP"2" to MARC."696" sub without sorting "x-z" delimited by " -- "
-          remove substring using regex (TEMP"2","\\.+$")		
-          concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
-      set TEMP"3" to multilingual by "696" "Subject" "display"
-          concatenate with delimiter (TEMP"1",TEMP"3","")
-      create pnx."display"."subject" with TEMP"1"
+    set TEMP"1" to MARC."696" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
+    set TEMP"2" to MARC."696" sub without sorting "x-z" delimited by " -- "
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+    set TEMP"3" to multilingual by "696" "Subject" "display"
+      concatenate with delimiter (TEMP"1",TEMP"3","")
+    create pnx."display"."subject" with TEMP"1"
 end
 
 rule "Primo VE Display- Subject 697"
@@ -133,10 +133,10 @@ rule "Primo VE Display- Subject 697"
 	then
     set TEMP"1" to MARC."697" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."697" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")		
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "697" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","")
+      concatenate with delimiter (TEMP"1",TEMP"3","")
     create pnx."display"."subject" with TEMP"1"
 end
 
@@ -147,10 +147,10 @@ rule "Primo VE Display- Subject 698"
   then
     set TEMP"1" to MARC."698" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."698" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")		
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "698" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","")
+      concatenate with delimiter (TEMP"1",TEMP"3","")
     create pnx."display"."subject" with TEMP"1"
 end
 
@@ -161,11 +161,11 @@ rule "Primo VE Display- Subject 699"
   then
     set TEMP"1" to MARC."699" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."699" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")		
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
-        kormarc remove nonfiling brackets MARC."699" sourcetag "699" from TEMP"1"
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      kormarc remove nonfiling brackets MARC."699" sourcetag "699" from TEMP"1"
     set TEMP"3" to multilingual by "699" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","") 
+      concatenate with delimiter (TEMP"1",TEMP"3","") 
     create pnx."display"."subject" with TEMP"1"
 end
 
@@ -177,10 +177,10 @@ rule "Primo VE Display- Subject 880-600"
   then
     set TEMP"1" to MARC."880" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."880" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")		
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "880" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","")
+      concatenate with delimiter (TEMP"1",TEMP"3","")
     create pnx."display"."subject" with TEMP"1"
 end
 
@@ -192,10 +192,10 @@ rule "Primo VE Display- Subject 880-610"
   then
     set TEMP"1" to MARC."880" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."880" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")		
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "880" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","")
+      concatenate with delimiter (TEMP"1",TEMP"3","")
     create pnx."display"."subject" with TEMP"1"
 end
 
@@ -207,10 +207,10 @@ rule "Primo VE Display- Subject 880-611"
   then
     set TEMP"1" to MARC."880" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."880" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")		
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "880" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","")
+      concatenate with delimiter (TEMP"1",TEMP"3","")
     create pnx."display"."subject" with TEMP"1"
 end
 
@@ -222,10 +222,10 @@ rule "Primo VE Display- Subject 880-630"
   then
     set TEMP"1" to MARC."880" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."880" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")		
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "880" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","")
+      concatenate with delimiter (TEMP"1",TEMP"3","")
     create pnx."display"."subject" with TEMP"1"
 end
 
@@ -237,10 +237,10 @@ rule "Primo VE Display- Subject 880-650"
   then
     set TEMP"1" to MARC."880" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."880" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")		
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "880" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","")
+      concatenate with delimiter (TEMP"1",TEMP"3","")
     create pnx."display"."subject" with TEMP"1"
 end
 
@@ -252,9 +252,9 @@ rule "Primo VE Display- Subject 880-651"
   then
     set TEMP"1" to MARC."880" subfields "a-u,w" delimited by " " remove substring using regex "\\.+$"
     set TEMP"2" to MARC."880" sub without sorting "x-z" delimited by " -- "
-        remove substring using regex (TEMP"2","\\.+$")		
-        concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
+      remove substring using regex (TEMP"2","\\.+$")
+      concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "880" "Subject" "display"
-        concatenate with delimiter (TEMP"1",TEMP"3","")
+      concatenate with delimiter (TEMP"1",TEMP"3","")
     create pnx."display"."subject" with TEMP"1"
 end
