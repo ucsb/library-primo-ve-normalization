@@ -17,9 +17,9 @@ rule "Primo VE - Series 440"
   when
     MARC."440" has any "a"
   then
-      set TEMP"1" to MARC "440" excluding num subfields without sort
+    set TEMP"1" to MARC "440" excluding num subfields without sort
     set TEMP"2" to MARC."440" sub without sort "a"
-    remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
       concatenate with delimiter (TEMP"1",TEMP"2","")
@@ -48,8 +48,8 @@ rule "Primo VE - Series 800"
     set TEMP"1" to MARC "800" excluding num subfields without sort
     set TEMP"2" to MARC."800" sub without sort "t"
       remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
-       add prefix (TEMP"2","$$Q")
-       remove substring using regex (TEMP"2","^$$Q$")
+      add prefix (TEMP"2","$$Q")
+      remove substring using regex (TEMP"2","^$$Q$")
     set TEMP"3" to MARC."800" prima_w_relation "w"
     set TEMP"4" to MARC."800" prima_x_relation "x"
       concatenate with delimiter (TEMP"1",TEMP"2","")
