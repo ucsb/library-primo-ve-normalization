@@ -7,7 +7,7 @@ rule "Primo VE - Lds07"
   then
     set TEMP"1" to MARC "400" excluding num subfields without sort
     set TEMP"2" to MARC."400" sub without sort "a"
-      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
       concatenate with delimiter (TEMP"1",TEMP"2","")
@@ -20,7 +20,7 @@ rule "Primo VE - Lds07 440"
   then
     set TEMP"1" to MARC "440" excluding num subfields without sort
     set TEMP"2" to MARC."440" sub without sort "a"
-    remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+    remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
       concatenate with delimiter (TEMP"1",TEMP"2","")
@@ -34,7 +34,7 @@ rule "Primo VE - Lds07 490"
   then
     set TEMP"1" to MARC "490" excluding num subfields without sort
     set TEMP"2" to MARC."490" sub without sort "a"
-      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
       concatenate with delimiter (TEMP"1",TEMP"2","")
@@ -48,7 +48,7 @@ rule "Primo VE - Lds07 800"
   then
     set TEMP"1" to MARC "800" excluding num subfields without sort
     set TEMP"2" to MARC."800" sub without sort "t"
-      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
     set TEMP"3" to MARC."800" prima_w_relation "w"
@@ -65,7 +65,7 @@ rule "Primo VE - Lds07 810"
   then
     set TEMP"1" to MARC "810" excluding num subfields without sort
     set TEMP"2" to MARC."810" sub without sort "t"
-      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
     set TEMP"3" to MARC."810" prima_w_relation "w"
@@ -82,7 +82,7 @@ rule "Primo VE - Lds07 811"
   then
     set TEMP"1" to MARC "811" excluding num subfields without sort
     set TEMP"2" to MARC."811" sub without sort "t"
-      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
     set TEMP"3" to MARC."811" prima_w_relation "w"
@@ -99,7 +99,7 @@ rule "Primo VE - Lds07 830"
   then
     set TEMP"1" to MARC "830" excluding num subfields without sort
     set TEMP"2" to MARC."830" sub without sort "a,t"
-      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
     set TEMP"3" to MARC."830" prima_w_relation "w"
@@ -117,7 +117,7 @@ rule "Primo VE - Lds07 840"
   then
     set TEMP"1" to MARC "840" excluding num subfields without sort
     set TEMP"2" to MARC."840" sub without sort "a"
-      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
       concatenate with delimiter (TEMP"1",TEMP"2","")
@@ -132,7 +132,7 @@ rule "Primo VE - Lds07 880-400"
   then
     set TEMP"1" to MARC "880" excluding num subfields without sort
     set TEMP"2" to MARC."880" sub without sort "a"
-      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
       concatenate with delimiter (TEMP"1",TEMP"2","")
@@ -146,7 +146,7 @@ rule "Primo VE - Lds07 880-440"
   then
     set TEMP"1" to MARC "880" excluding num subfields without sort
     set TEMP"2" to MARC."880" sub without sort "a"
-      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
       concatenate with delimiter (TEMP"1",TEMP"2","")
@@ -160,7 +160,7 @@ rule "Primo VE - Lds07 880-490"
   then
     set TEMP"1" to MARC "880" excluding num subfields without sort
     set TEMP"2" to MARC."880" sub without sort "a"
-      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
       concatenate with delimiter (TEMP"1",TEMP"2","")
@@ -174,7 +174,7 @@ rule "Primo VE - Lds07 880-800"
   then
     set TEMP"1" to MARC "880" excluding num subfields without sort
     set TEMP"2" to MARC."880" sub without sort "t"
-      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
       concatenate with delimiter (TEMP"1",TEMP"2","")
@@ -188,7 +188,7 @@ rule "Primo VE - Lds07 880-810"
   then
     set TEMP"1" to MARC "880" excluding num subfields without sort
     set TEMP"2" to MARC."880" sub without sort "t"
-      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
       concatenate with delimiter (TEMP"1",TEMP"2","")
@@ -202,7 +202,7 @@ rule "Primo VE - Lds07 880-811"
   then
     set TEMP"1" to MARC "880" excluding num subfields without sort
     set TEMP"2" to MARC."880" sub without sort "t"
-      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
       concatenate with delimiter (TEMP"1",TEMP"2","")
@@ -216,7 +216,7 @@ rule "Primo VE - Lds07 880-830"
   then
     set TEMP"1" to MARC "880" excluding num subfields without sort
     set TEMP"2" to MARC."880" sub without sort "a,t"
-      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
       concatenate with delimiter (TEMP"1",TEMP"2","")
@@ -230,7 +230,7 @@ rule "Primo VE - Lds07 880-840"
   then
     set TEMP"1" to MARC "880" excluding num subfields without sort
     set TEMP"2" to MARC."880" sub without sort "a"
-      remove substring using regex (TEMP"2","(/|:|;|=|,)+$")
+      remove substring using regex (TEMP"2","(/|:|;|=|,|.)+$")
       add prefix (TEMP"2","$$Q")
       remove substring using regex (TEMP"2","^$$Q$")
       concatenate with delimiter (TEMP"1",TEMP"2","")
