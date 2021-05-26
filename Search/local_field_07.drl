@@ -6,7 +6,7 @@ rule "Primo VE Marc - Lsr07"
     MARC."400" has any "a"
   then
     set TEMP"1" to MARC "400" sub without sort "a"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
     create pnx."search"."lsr07" with TEMP"1"
 end
 
@@ -15,7 +15,7 @@ rule "Primo VE Marc - Lsr07 440"
     MARC."440" has any "a"
   then
     set TEMP"1" to MARC "440" sub without sort "a"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
       kormarc remove nonfiling brackets MARC."440" sourcetag "440" from TEMP"1"
     create pnx."search"."lsr07" with TEMP"1"
 end
@@ -25,7 +25,7 @@ rule "Primo VE Marc - Lsr07 490"
     MARC."490" has any "a"
   then
     set TEMP"1" to MARC "490" sub without sort "a"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
       kormarc remove nonfiling brackets MARC."490" sourcetag "490" from TEMP"1"
     create pnx."search"."lsr07" with TEMP"1"
 end
@@ -35,7 +35,7 @@ rule "Primo VE Marc - Lsr07 800"
     MARC."800" has any "t"
   then
     set TEMP"1" to MARC "800" sub without sort "t"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
       remove substring using regex (TEMP"1","^$$Q$")
     set TEMP"2" to MARC."800" prima_w_relation "w"
     set TEMP"3" to MARC."800" prima_x_relation "x"
@@ -49,7 +49,7 @@ rule "Primo VE Marc - Lsr07 810"
     MARC."810" has any "t"
   then
     set TEMP"1" to MARC "810" sub without sort "t"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
       remove substring using regex (TEMP"1","^$$Q$")
     set TEMP"2" to MARC."810" prima_w_relation "w"
     set TEMP"3" to MARC."810" prima_x_relation "x"
@@ -63,7 +63,7 @@ rule "Primo VE Marc - Lsr07 811"
     MARC."811" has any "t"
   then
     set TEMP"1" to MARC "811" sub without sort "t"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
       remove substring using regex (TEMP"1","^$$Q$")
     set TEMP"2" to MARC."811" prima_w_relation "w"
     set TEMP"3" to MARC."811" prima_x_relation "x"
@@ -77,7 +77,7 @@ rule "Primo VE Marc - Lsr07 830"
     MARC."830" has any "a,t"
   then
     set TEMP"1" to MARC "830" sub without sort "a,t"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
       remove substring using regex (TEMP"1","^$$Q$")
     set TEMP"2" to MARC."830" prima_w_relation "w"
     set TEMP"3" to MARC."830" prima_x_relation "x"
@@ -92,7 +92,7 @@ rule "Primo VE Marc - Lsr07 840"
     MARC."840" has any "a"
   then
     set TEMP"1" to MARC "840" sub without sort "a"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
     create pnx."search"."lsr07" with TEMP"1"
 end
 
@@ -103,7 +103,7 @@ rule "Primo VE Marc - Lsr07 880-400"
 
   then
     set TEMP"1" to MARC "880" sub without sort "a"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
     create pnx."search"."lsr07" with TEMP"1"
 end
 
@@ -113,7 +113,7 @@ rule "Primo VE Marc - Lsr07 880-440"
     MARC."880"."6" match "440-.*"
   then
     set TEMP"1" to MARC "880" sub without sort "a"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
     create pnx."search"."lsr07" with TEMP"1"
 end
 
@@ -123,7 +123,7 @@ rule "Primo VE Marc - Lsr07 880-490"
     MARC."880"."6" match "490-.*"
   then
     set TEMP"1" to MARC "880" sub without sort "a"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
     create pnx."search"."lsr07" with TEMP"1"
 end
 
@@ -133,7 +133,7 @@ rule "Primo VE Marc - Lsr07 880-800"
     MARC."880"."6" match "800-.*"
   then
     set TEMP"1" to MARC "880" sub without sort "t"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
     create pnx."search"."lsr07" with TEMP"1"
 end
 
@@ -143,7 +143,7 @@ rule "Primo VE Marc - Lsr07 880-810"
     MARC."880"."6" match "810-.*"
   then
     set TEMP"1" to MARC "880" sub without sort "t"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
     create pnx."search"."lsr07" with TEMP"1"
 end
 
@@ -153,7 +153,7 @@ rule "Primo VE Marc - Lsr07 880-811"
     MARC."880"."6" match "811-.*"
   then
     set TEMP"1" to MARC "880" sub without sort "t"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
     create pnx."search"."lsr07" with TEMP"1"
 end
 
@@ -163,7 +163,7 @@ rule "Primo VE Marc - Lsr07 880-830"
     MARC."880"."6" match "830-.*"
   then
     set TEMP"1" to MARC "880" sub without sort "a,t"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
     create pnx."search"."lsr07" with TEMP"1"
 end
 
@@ -173,6 +173,6 @@ rule "Primo VE Marc - Lsr07 880-840"
     MARC."880"."6" match "840.*"
   then
     set TEMP"1" to MARC "880" sub without sort "a"
-      remove substring using regex (TEMP"1","(/|:|;|=|,|.)+$")
+      remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
     create pnx."search"."lsr07" with TEMP"1"
 end
