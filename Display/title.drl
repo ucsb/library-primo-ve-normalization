@@ -9,7 +9,7 @@ rule "Primo VE - Title"
       remove string (TEMP"1","<<")
       remove string (TEMP"1",">>")
     set TEMP"2" to MARC."245" subfields "c"
-      concatenate with delimiter (TEMP"1",TEMP"2","")
+      concatenate with delimiter (TEMP"1",TEMP"2"," ")
     create pnx."display"."title" with TEMP"1"
 end
 
