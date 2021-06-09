@@ -1,7 +1,8 @@
+rule "Primo VE - Lds05"
+
 ## Display: Local Notes
 ## using pre-indexed data for search/facets
 
-rule "Primo VE - Lds05"
   when
     MARC is "590"."a"
   then

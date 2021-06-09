@@ -1,7 +1,7 @@
-## Display: Series
-## currently using pre-defined marc 490 otb rule
-
 rule "Primo VE - Lds07"
+
+## Display: Series
+
   when
     MARC."400" has any "a"
   then

@@ -1,6 +1,7 @@
+rule "Primo VE - Lds01"
+
 ## Display: Performers
 
-rule "Primo VE - Lds01"
 	when
     MARC is "511"."a"
   then

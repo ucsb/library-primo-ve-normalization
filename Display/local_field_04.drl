@@ -1,6 +1,7 @@
+rule "Primo VE - Lds04"
+
 ## Display: Indexes/Finding Aid
 
-rule "Primo VE - Lds04"
   when
     MARC."555" has any "3,a-d,u"
   then

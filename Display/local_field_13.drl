@@ -1,6 +1,7 @@
+rule "Primo VE - Lds13"
+
 ## Display: Acquisitions/Ownership History
 
-rule "Primo VE - Lds13"
   when
       MARC."541" has any "3,c,d,a,5" AND (
         MARC."541".ind"1" equals " " OR

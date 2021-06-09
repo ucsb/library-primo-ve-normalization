@@ -1,6 +1,7 @@
+rule "Primo VE Marc - Lsr02"
+
 ## facets on
 
-rule "Primo VE Marc - Lsr02"
   when
     MARC is "545"."a"
   then

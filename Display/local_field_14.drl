@@ -1,6 +1,7 @@
-## Display: 
-
 rule "Primo VE - Lds14"
+
+## Display: Abstract
+
   when
     MARC is "520"."a" AND
     MARC."520".ind"1" equals "3"

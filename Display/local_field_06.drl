@@ -1,6 +1,7 @@
+rule "Primo VE - Lds06"
+
 ## Display: Cite As
 
-rule "Primo VE - Lds06"
   when
     MARC is "524"."a"
   then
