@@ -8,10 +8,8 @@ rule "Primo VE - Title"
     set TEMP"1" to prima display title
       remove string (TEMP"1","<<")
       remove string (TEMP"1",">>")
-      remove substring using regex (TEMP"1","(,|/|:|;|=)+$")
     set TEMP"2" to MARC."245" subfields "c"
-      remove substring using regex (TEMP"2","(,|/|:|;|=)+$")
-      concatenate with delimiter (TEMP"1",TEMP"2","")
+      concatenate with delimiter (TEMP"1",TEMP"2"," ")
     create pnx."display"."title" with TEMP"1"
 end
 
@@ -23,6 +21,5 @@ rule "Primo VE - Title1"
     set TEMP"1" to prima display title
       remove string (TEMP"1","<<")
       remove string (TEMP"1",">>")
-      remove substring using regex (TEMP"1","(,|/|:|;|=)+$")
     create pnx."display"."title" with TEMP"1"
 end
