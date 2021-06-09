@@ -1,0 +1,9 @@
+rule "Primo VE Marc - Lsr11"
+
+## facets on
+
+  when
+    MARC."973" has any "a-z"
+  then
+    create pnx."search"."lsr11" with MARC "973" subfields "a-z"
+end
