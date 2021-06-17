@@ -82,16 +82,6 @@ rule "Primo VE - Publisher-notes 362"
       create pnx."display"."publisher_notes" with "N/A"
 end
 
-rule "Primo VE - publisher 502"
-  priority 100
-	when
-        MARC is "502"."a"
-	then
-        set TEMP"1" to MARC."502" subfields "a"
-        add suffix (TEMP"1","<br><br>")
-        create pnx."display"."description" with TEMP"1"
-end
-
 rule "Primo VE - Alternate Publisher 880-260/3"
 priority 10
 	when
