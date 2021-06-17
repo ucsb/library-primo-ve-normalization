@@ -2,80 +2,80 @@
 
 rule "Primo VE - Description 500"
   priority 1
-	when
-        MARC is "500"."a"
-	then
-        set TEMP"1" to MARC."500" subfields "a"
-        add suffix (TEMP"1","<br class='note'><br class='note'>")
-        create pnx."display"."description" with TEMP"1"
+  when
+    MARC is "500"."a"
+  then
+    set TEMP"1" to MARC."500" subfields "a"
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
+    create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 501"
   priority 2
-	when
-        MARC is "501"."a"
-	then
-        set TEMP"1" to MARC."501" subfields "a"
-        add suffix (TEMP"1","<br class='note'><br class='note'>")
-        create pnx."display"."description" with TEMP"1"
+  when
+    MARC is "501"."a"
+  then
+    set TEMP"1" to MARC."501" subfields "a"
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
+    create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 504"
   priority 3
-	when
-        MARC is "504"."a"
-	then
-        set TEMP"1" to MARC."504" subfields "a"
-        add suffix (TEMP"1","<br class='note'><br class='note'>")
-        create pnx."display"."description" with TEMP"1"
+  when
+    MARC is "504"."a"
+  then
+    set TEMP"1" to MARC."504" subfields "a"
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
+    create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 508"
   priority 4
-	when
-        MARC is "508"."a"
-	then
-        set TEMP"1" to MARC."508" subfields "a"
-        add suffix (TEMP"1","<br class='note'><br class='note'>")
-        create pnx."display"."description" with TEMP"1"
+  when
+    MARC is "508"."a"
+  then
+    set TEMP"1" to MARC."508" subfields "a"
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
+    create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 510"
   priority 17
-	when
+  when
     MARC."510" has any "a-z"
-	then
+  then
     set TEMP"1" to MARC "510" excluding num subfields without sort
-    add prefix (TEMP"1","<i>Citations/References:</i> ")
-    add suffix (TEMP"1","<br class='note'><br class='note'>")
+      add prefix (TEMP"1","<i>Citations/References:</i> ")
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
     create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 515"
   priority 5
-	when
-        MARC is "515"."a"
-	then
+  when
+    MARC is "515"."a"
+  then
     set TEMP"1" to MARC "515" subfields "a"
-    add suffix (TEMP"1","<br class='note'><br class='note'>")
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
     create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 518"
   priority 6
-	when
-        MARC."518" has any "a,d,o,p"
-	then
-        set TEMP"1" to MARC."518" subfields "a,d,o,p"
-        add suffix (TEMP"1","<br class='note'><br class='note'>")
-        create pnx."display"."description" with TEMP"1"
+  when
+    MARC."518" has any "a,d,o,p"
+  then
+    set TEMP"1" to MARC."518" subfields "a,d,o,p"
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
+    create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 525"
   priority 7
-	when
+  when
     MARC."525" has any "a-z"
-	then
+  then
     set TEMP"1" to MARC "525" excluding num subfields without sort
     add suffix (TEMP"1","<br class='note'><br class='note'>")
     create pnx."display"."description" with TEMP"1"
@@ -83,9 +83,9 @@ end
 
 rule "Primo VE - Description 530"
   priority 8
-	when
+  when
     MARC."530" has any "3,a-d,u"
-	then
+  then
     set TEMP"1" to MARC."530" subfields "3,a-d,u"
     add suffix (TEMP"1","<br class='note'><br class='note'>")
     create pnx."display"."description" with TEMP"1"
@@ -93,138 +93,138 @@ end
 
 rule "Primo VE - Description 533"
   priority 18
-	when
-        MARC."533" has any "a,b,c,d,e,f,m"
-	then
-        set TEMP"1" to MARC "533" subfields "a,b,c,d,e,f,m"
-        add prefix (TEMP"1","<i>Reproduction Note:</i> ")
-        add suffix (TEMP"1","<br class='note'><br class='note'>")
-        create pnx."display"."description" with TEMP"1"
+  when
+    MARC."533" has any "a,b,c,d,e,f,m"
+  then
+    set TEMP"1" to MARC "533" subfields "a,b,c,d,e,f,m"
+      add prefix (TEMP"1","<i>Reproduction Note:</i> ")
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
+    create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 534"
   priority 19
-	when
-        MARC."534" has any "3,a,p,c-f,k-n,t,x,z"
-	then
-        set TEMP"1" to MARC "534" subfields "3,a,p,c-f,k-n,t,x,z"
-        add prefix (TEMP"1","<i>Original Version:</i> ")
-        add suffix (TEMP"1","<br class='note'><br class='note'>")
-        create pnx."display"."description" with TEMP"1"
+  when
+    MARC."534" has any "3,a,p,c-f,k-n,t,x,z"
+  then
+    set TEMP"1" to MARC "534" subfields "3,a,p,c-f,k-n,t,x,z"
+      add prefix (TEMP"1","<i>Original Version:</i> ")
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
+    create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 535-1"
   priority 20
-	when
+  when
     MARC."535" has any "3,a-d,g" AND
     MARC."535".ind"1" equals "1"
-	then
-        set TEMP"1" to MARC."535" subfields "3,a-d,g"
-        add prefix (TEMP"1","<i>Location of Originals:</i> ")
-        add suffix (TEMP"1","<br class='note'><br class='note'>")
-        create pnx."display"."description" with TEMP"1"
+  then
+    set TEMP"1" to MARC."535" subfields "3,a-d,g"
+      add prefix (TEMP"1","<i>Location of Originals:</i> ")
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
+    create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 535-2"
   priority 20
-	when
+  when
     MARC."535" has any "3,a-d,g" AND
     MARC."535".ind"1" equals "2"
-	then
-        set TEMP"1" to MARC."535" subfields "3,a-d,g"
-        add prefix (TEMP"1","<i>Location of Duplicates:</i> ")
-        add suffix (TEMP"1","<br class='note'><br class='note'>")
-        create pnx."display"."description" with TEMP"1"
+  then
+    set TEMP"1" to MARC."535" subfields "3,a-d,g"
+      add prefix (TEMP"1","<i>Location of Duplicates:</i> ")
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
+    create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 538"
   priority 9
-	when
-        MARC is "538"."a"
-	then
+  when
+    MARC is "538"."a"
+  then
     set TEMP"1" to MARC "538" subfields "a"
-    add suffix (TEMP"1","<br class='note'><br class='note'>")
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
     create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 544"
   priority 21
-	when
+  when
     MARC."544" has any "a-z"
-	then
+  then
     set TEMP"1" to MARC "544" excluding num subfields without sort
-    add prefix (TEMP"1","<i>Location of Other Archival Materials:</i> ")
-    add suffix (TEMP"1","<br class='note'><br class='note'>")
+      add prefix (TEMP"1","<i>Location of Other Archival Materials:</i> ")
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
     create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 546"
   priority 0
-	when
-        MARC."546" has any "a,b"
-	then
-        set TEMP"1" to MARC."546" subfields "a,b"
-        add suffix (TEMP"1","<br class='note'><br class='note'>")
-        create pnx."display"."description" with TEMP"1"
+  when
+    MARC."546" has any "a,b"
+  then
+    set TEMP"1" to MARC."546" subfields "a,b"
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
+    create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 550"
   priority 10
-	when
+  when
     MARC."550" has any "a-z"
-	then
+  then
     set TEMP"1" to MARC "550" excluding num subfields without sort
-    add suffix (TEMP"1","<br class='note'><br class='note'>")
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
     create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 580"
   priority 11
-	when
+  when
     MARC."580" has any "a-z"
-	then
+  then
     set TEMP"1" to MARC "580" excluding num subfields without sort
-    add suffix (TEMP"1","<br class='note'><br class='note'>")
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
     create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 581"
   priority 22
-	when
+  when
     MARC."581" has any "a-z"
-	then
+  then
     set TEMP"1" to MARC "581" excluding num subfields without sort
-    add suffix (TEMP"1","<br class='note'><br class='note'>")
-    add prefix (TEMP"1","<i>Publications about Described Materials</i>: ")
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
+      add prefix (TEMP"1","<i>Publications about Described Materials</i>: ")
     create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 585"
   priority 14
-	when
+  when
     MARC."585" has any "a-z"
-	then
+  then
     set TEMP"1" to MARC "585" excluding num subfields without sort
-    add suffix (TEMP"1","<br class='note'><br class='note'>")
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
     create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 586"
   priority 15
-	when
+  when
     MARC."586" has any "a-z"
-	then
+  then
     set TEMP"1" to MARC "586" excluding num subfields without sort
-    add suffix (TEMP"1","<br class='note'><br class='note'>")
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
     create pnx."display"."description" with TEMP"1"
 end
 
 rule "Primo VE - Description 588"
   priority 16
-	when
+  when
     MARC."588" has any "a-z"
-	then
+  then
     set TEMP"1" to MARC "588" excluding num subfields without sort
-    add suffix (TEMP"1","<br class='note'><br class='note'>")
+      add suffix (TEMP"1","<br class='note'><br class='note'>")
     create pnx."display"."description" with TEMP"1"
 end
