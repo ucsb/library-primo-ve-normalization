@@ -1,6 +1,7 @@
 ## Display: Contributor
 
 rule "Primo VE Display - contributor 700"
+  priority 0
   when
     MARC."700" has any "a,b,c,d,e,j,q,u" AND
     MARC.control is "001"
@@ -18,6 +19,7 @@ rule "Primo VE Display - contributor 700"
 end
 
 rule "Primo VE Display - contributor 710"
+  priority 1
   when
     MARC."710" has any "a,b,c,d,e"
   then
@@ -34,6 +36,7 @@ rule "Primo VE Display - contributor 710"
 end
 
 rule "Primo VE Display - contributor 711"
+  priority 2
   when
     MARC."711" has any "a,b,c,d,n"
   then
@@ -50,6 +53,7 @@ rule "Primo VE Display - contributor 711"
 end
 
 rule "Primo VE Display - contributor 796"
+  priority 3
   when
     MARC."796" has any "a-z"
   then
@@ -59,6 +63,7 @@ rule "Primo VE Display - contributor 796"
 end
 
 rule "Primo VE Display - contributor 797"
+  priority 4
   when
       MARC."797" has any "a-z"
   then
@@ -68,6 +73,7 @@ rule "Primo VE Display - contributor 797"
 end
 
 rule "Primo VE Display - alternate contributor 880-700"
+  priority 0
   when
     MARC."880" has any "a,b,c,d,e,j,q,u" AND
     MARC."880"."6" match "700-.*"
@@ -84,7 +90,8 @@ rule "Primo VE Display - alternate contributor 880-700"
     create pnx."display"."alternate_contributor" with TEMP"1"
 end
 
-rule "Primo VE Display - alternate contributor 880-710 "
+rule "Primo VE Display - alternate contributor 880-710"
+  priority 1
   when
     MARC."880" has any "a,b,c,d,e" AND
     MARC."880"."6" match "710-.*"
@@ -102,6 +109,7 @@ rule "Primo VE Display - alternate contributor 880-710 "
 end
 
 rule "Primo VE Display - alternate contributor 880-711"
+  priority 2
   when
     MARC."880" has any "a,b,c,d,n" AND
     MARC."880"."6" match "711-.*"
