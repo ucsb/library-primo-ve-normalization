@@ -5,8 +5,9 @@ rule "Primo VE Display - Subject 600"
     MARC."600" has any "a-z" AND NOT
     MARC."600".ind"2" equals "2"
   then
-    set TEMP"1" to MARC."600" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."600" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."600" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."600" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "600" "Subject" "display"
@@ -19,8 +20,9 @@ rule "Primo VE Display- Subject 610"
     MARC."610" has any "a-z" AND NOT
     MARC."610".ind"2" equals "2"
 	then
-    set TEMP"1" to MARC."610" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."610" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."610" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."610" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "610" "Subject" "display"
@@ -33,8 +35,9 @@ rule "Primo VE Display- Subject 611"
     MARC."611" has any "a-z" AND NOT
     MARC."611".ind"2" equals "2"
   then
-    set TEMP"1" to MARC."611" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."611" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."611" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."611" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "611" "Subject" "display"
@@ -47,8 +50,9 @@ rule "Primo VE Display- Subject 630"
     MARC."630" has any "a-z" AND NOT
     MARC."630".ind"2" equals "2"
   then
-    set TEMP"1" to MARC."630" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."630" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."630" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."630" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
       kormarc remove nonfiling brackets MARC."630" sourcetag "630" from TEMP"1"
@@ -62,8 +66,9 @@ rule "Primo VE Display- Subject 650"
     MARC."650" has any "a-z" AND NOT
     MARC."650".ind"2" equals "2"
   then
-    set TEMP"1" to MARC."650" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."650" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."650" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."650" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "650" "Subject" "display"
@@ -76,8 +81,9 @@ rule "Prima_Display - Subject 651"
     MARC."651" has any "a-z" AND NOT
     MARC."651".ind"2" equals "2"  
   then
-    set TEMP"1" to MARC."651" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."651" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."651" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."651" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "651" "Subject" "display"
@@ -89,8 +95,9 @@ rule "Primo VE Display- Subject 690"
   when
     MARC."690" has any "a-z"
   then
-    set TEMP"1" to MARC."690" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."690" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."690" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."690" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "690" "Subject" "display"
@@ -103,8 +110,9 @@ rule "Prima_Display - Subject 691"
     MARC."691" has any "a-z" AND NOT
     MARC."691".ind"2" equals "2"  
   then
-    set TEMP"1" to MARC."691" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."691" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."691" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."691" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "691" "Subject" "display"
@@ -117,8 +125,9 @@ rule "Primo VE Display - Subject 696"
     MARC."696" has any "a-z" AND NOT
     MARC."696".ind"2" equals "2"
   then
-    set TEMP"1" to MARC."696" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."696" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."696" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."696" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "696" "Subject" "display"
@@ -131,8 +140,9 @@ rule "Primo VE Display- Subject 697"
     MARC."697" has any "a-z" AND NOT
     MARC."697".ind"2" equals "2"
 	then
-    set TEMP"1" to MARC."697" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."697" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."697" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."697" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "697" "Subject" "display"
@@ -145,8 +155,9 @@ rule "Primo VE Display- Subject 698"
     MARC."698" has any "a-z" AND NOT
     MARC."698".ind"2" equals "2"
   then
-    set TEMP"1" to MARC."698" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."698" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."698" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."698" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "698" "Subject" "display"
@@ -159,8 +170,9 @@ rule "Primo VE Display- Subject 699"
     MARC."699" has any "a-z" AND NOT
     MARC."699".ind"2" equals "2"
   then
-    set TEMP"1" to MARC."699" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."699" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."699" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."699" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
       kormarc remove nonfiling brackets MARC."699" sourcetag "699" from TEMP"1"
@@ -171,12 +183,13 @@ end
 
 rule "Primo VE Display- Subject 880-600"
   when
-    MARC."880" has any "a,q,b-e,g,t,f,k-p,r,x-z" AND NOT
+    MARC."880" has any "a-z" AND NOT
     MARC."880".ind"2" equals "2" AND
     MARC."880"."6" match "600-.*"
   then
-    set TEMP"1" to MARC."880" subfields "a,q,b-e,g,t,f,k-p,r" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."880" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."880" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."880" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "880" "Subject" "display"
@@ -190,8 +203,9 @@ rule "Primo VE Display- Subject 880-610"
     MARC."880".ind"2" equals "2" AND
     MARC."880"."6" match "610-.*"
   then
-    set TEMP"1" to MARC."880" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."880" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."880" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."880" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "880" "Subject" "display"
@@ -205,8 +219,9 @@ rule "Primo VE Display- Subject 880-611"
     MARC."880".ind"2" equals "2" AND
     MARC."880"."6" match "611-.*"
   then
-    set TEMP"1" to MARC."880" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."880" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."880" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."880" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "880" "Subject" "display"
@@ -220,8 +235,9 @@ rule "Primo VE Display- Subject 880-630"
     MARC."880".ind"2" equals "2" AND
     MARC."880"."6" match "630-.*"
   then
-    set TEMP"1" to MARC."880" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."880" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."880" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."880" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "880" "Subject" "display"
@@ -235,8 +251,9 @@ rule "Primo VE Display- Subject 880-650"
     MARC."880".ind"2" equals "2" AND
     MARC."880"."6" match "650-.*"
   then
-    set TEMP"1" to MARC."880" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."880" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."880" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."880" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "880" "Subject" "display"
@@ -250,8 +267,9 @@ rule "Primo VE Display- Subject 880-651"
     MARC."880".ind"2" equals "2" AND
     MARC."880"."6" match "651-.*"
   then
-    set TEMP"1" to MARC."880" subfields "a-w" delimited by " " remove substring using regex "\\.+$"
-    set TEMP"2" to MARC."880" sub without sorting "x-z" delimited by " -- "
+    set TEMP"1" to MARC."880" sub without sorting "a-u" delimited by " "
+      remove substring using regex (TEMP"1","\\.+$")
+    set TEMP"2" to MARC."880" sub without sorting "v-z" delimited by " -- "
       remove substring using regex (TEMP"2","\\.+$")
       concatenate with delimiter (TEMP"1",TEMP"2"," -- ")
     set TEMP"3" to multilingual by "880" "Subject" "display"
