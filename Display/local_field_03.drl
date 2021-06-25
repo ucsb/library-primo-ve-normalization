@@ -1,18 +1,17 @@
 rule "Primo VE - Lds03"
-
 ## Display: Summary
 
-	when
-		MARC is "520"."a" AND NOT
-		MARC."520".ind"1" equals "3"
-	then
-		create pnx."display"."lds03" with MARC "520"."a"
+  when
+    MARC is "520"."a" AND NOT
+    MARC."520".ind"1" equals "3"
+  then
+    create pnx."display"."lds03" with MARC "520"."a"
 end
 
 rule "Primo VE - Lds03-520"
-	when
-		MARC is "880" AND
-		MARC."880"."6" match "520-.*"
-	then
-		create pnx."display"."description" with MARC."880" excluding num subfields without sort
+  when
+    MARC is "880" AND
+    MARC."880"."6" match "520-.*"
+  then
+    create pnx."display"."description" with MARC."880" excluding num subfields without sort
 end

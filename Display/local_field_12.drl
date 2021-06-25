@@ -1,11 +1,10 @@
 rule "Primo VE - Lds12"
-
 ## Display: Local names
 ## using pre-defined marc 970, 971, and 972 otb rules
 ## enabled for search and facet
 
-	when
-		MARC is "XXX"."a"
-	then
-		create pnx."display"."lds12" with MARC "XXX"."a"
+  when
+    MARC is "XXX"."a"
+  then
+    create pnx."display"."lds12" with MARC "XXX"."a"
 end

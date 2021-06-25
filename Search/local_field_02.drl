@@ -1,6 +1,5 @@
 rule "Primo VE Marc - Lsr02"
-
-## facets on
+## facets off
 
   when
     MARC is "545"."a"

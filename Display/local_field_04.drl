@@ -1,6 +1,5 @@
 rule "Primo VE - Lds04"
-
-## Display: Indexes/Finding Aid
+## Display: Indexes/ Finding Aid
 
   when
     MARC."555" has any "3,a-d,u"
