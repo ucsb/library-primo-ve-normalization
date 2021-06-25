@@ -1,0 +1,9 @@
+rule "Primo VE Marc - Lsr14"
+## facets off
+
+  when
+    MARC is "520"."a" AND
+    MARC."520".ind"1" equals "3"
+  then
+    create pnx."search"."lsr14" with MARC "520"."a"
+end
