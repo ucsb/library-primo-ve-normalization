@@ -1,16 +1,16 @@
 ## Display: Dissertation
 
 rule "Primo VE - Dissertation"
-	when
-		MARC is "502"
-	then
-		create pnx."display"."dissertation" with MARC "502" excluding num subfields without sort
+  when
+    MARC is "502"
+  then
+    create pnx."display"."dissertation" with MARC "502" excluding num subfields without sort
 end
 
 rule "Primo VE - Dissertation 880-502"
-	when
+  when
     MARC is "880" AND
     MARC."880"."6" match "502-.*"
-	then
+  then
     create pnx."display"."dissertation" with MARC."880" excluding num subfields without sort
 end
