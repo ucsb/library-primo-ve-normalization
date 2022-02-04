@@ -1,8 +1,45 @@
 ## Display: Title
 
+## Journal titles using MARC 245 with translation
 rule "Primo VE - Title"
   when
-    MARCRECORD AND
+    MARC.control."LDR"(6-8) matches "ab|ai|as" AND
+    MARC."130" has any "l" AND
+    MARC."130"."l" match "English.*" AND
+    MARC."245" has any "a,b,f,g,k,n,p,s"
+  then
+    set TEMP"1" to MARC."245" subfields "a,b,f,g,k,n,p,s"
+    create pnx."display"."title" with TEMP"1"
+end
+
+## Journal titles using MARC 130
+rule "Primo VE - Title130"
+  when
+    MARC.control."LDR"(6-8) matches "ab|ai|as" AND
+    MARC."130" has any "a,d,f,k,l,m,n,o,p,r,s" AND NOT (
+      MARC."130"."l" match "English.*" AND
+      MARC."245" has any "a,b,f,g,k,n,p,s")
+  then
+    set TEMP"1" to MARC."130" subfields "a,d,f,k,l,m,n,o,p,r,s"
+    create pnx."display"."title" with TEMP"1"
+end
+
+## Journal titles without MARC 130
+rule "Primo VE - Title245Journals"
+  when
+    MARC.control."LDR"(6-8) matches "ab|ai|as" AND
+    MARC."245" has any "a,b,f,g,k,n,p,s" AND NOT
+    MARC."130" has any "a,d,f,k,l,m,n,o,p,r,s"
+  then
+    set TEMP"1" to MARC."245" subfields "a,b,f,g,k,n,p,s"
+    create pnx."display"."title" with TEMP"1"
+end
+
+## Non-journal titles with MARC 245 $c
+rule "Primo VE - Title245c"
+  when
+    MARCRECORD AND NOT
+    MARC.control."LDR"(6-8) matches "ab|ai|as" AND
     MARC."245" has any "c"
   then
     set TEMP"1" to prima display title
@@ -14,9 +51,11 @@ rule "Primo VE - Title"
     create pnx."display"."title" with TEMP"1"
 end
 
-rule "Primo VE - Title1"
+## Non-journal titles without MARC 245 $c
+rule "Primo VE - Title245"
   when
     MARCRECORD AND NOT
+    MARC.control."LDR"(6-8) matches "ab|ai|as" AND NOT
     MARC."245" has any "c"
   then
     set TEMP"1" to prima display title
