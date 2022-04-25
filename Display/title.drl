@@ -35,28 +35,11 @@ rule "Primo VE - Title245Journals"
     create pnx."display"."title" with TEMP"1"
 end
 
-## Non-journal titles with MARC 245 $c
-rule "Primo VE - Title245c"
-  when
-    MARCRECORD AND NOT
-    MARC.control."LDR"(6-8) matches "ab|ai|as" AND
-    MARC."245" has any "c"
-  then
-    set TEMP"1" to prima display title
-      remove string (TEMP"1","<<")
-      remove string (TEMP"1",">>")
-      remove substring using regex (TEMP"1","(,|/|:|;|=)+$")
-    set TEMP"2" to MARC."245" subfields "c"
-      concatenate with delimiter (TEMP"1",TEMP"2"," / ")
-    create pnx."display"."title" with TEMP"1"
-end
-
-## Non-journal titles without MARC 245 $c
+## Non-journal titles
 rule "Primo VE - Title245"
   when
     MARCRECORD AND NOT
-    MARC.control."LDR"(6-8) matches "ab|ai|as" AND NOT
-    MARC."245" has any "c"
+    MARC.control."LDR"(6-8) matches "ab|ai|as"
   then
     set TEMP"1" to prima display title
       remove string (TEMP"1","<<")
