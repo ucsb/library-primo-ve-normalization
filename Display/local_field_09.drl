@@ -1,0 +1,12 @@
+rule "Primo VE - Lds09"
+## Non-journal titles with MARC 245 $c
+## Display: n/a
+
+  when
+    MARCRECORD AND NOT
+    MARC.control."LDR"(6-8) matches "ab|ai|as" AND
+    MARC."245" has any "c"
+  then
+    set TEMP"1" to MARC."245" subfields "c"
+    create pnx."display"."lds09" with TEMP"1"
+end
