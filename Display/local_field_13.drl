@@ -2,11 +2,12 @@ rule "Primo VE - Lds13"
 ## Display: Acquisitions/ Ownership History
 
   when
-    MARC."541" has any "3,c,d,a,5" AND (
+    MARC."541" has any "3,c,d,a,5" AND 
+    MARC."541"."5" match "CU-SB" AND (
       MARC."541".ind"1" equals " " OR
       MARC."541".ind"1" equals "1")
   then
-    create pnx."display"."lds13" with MARC "541" subfields "3,c,d,a,5"
+    create pnx."display"."lds13" with MARC "541" subfields "3,c,d,a"
 end
 
 rule "Primo VE - Lds13 561"
