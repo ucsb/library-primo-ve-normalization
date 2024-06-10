@@ -1,0 +1,7 @@
+## placeholder file to document that local_field_08 was created using an
+## out-of-the-box configuration for marc21 field 969
+##
+## this was created to conditionally filter course reserves records
+## from our local catalog scope
+##
+## https://ucsb-atlas.atlassian.net/browse/OPS-1535
