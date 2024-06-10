@@ -1,10 +1,11 @@
 rule "Primo VE - Lds09"
-## Non-journal titles with MARC 245 $c
+## Side B titles for Sound recordings
 ## Display: n/a
 
   when
-    MARCRECORD AND NOT
-    MARC.control."LDR"(6-8) matches "ab|ai|as" AND
+    MARCRECORD AND
+    MARC.control."007"(0-1) equals "s" AND
+    MARC.control."007"(5-6) matches "s|m" AND
     MARC."245" has any "c"
   then
     set TEMP"1" to MARC."245" subfields "c"
