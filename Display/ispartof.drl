@@ -5,7 +5,7 @@
 rule "Primo VE - Ispartof 773 without 9"
   when
     MARC."773" has any "t,w,x,z" AND
-		MARC."773"."9" not match ".*"
+    MARC."773"."9" not match ".*"
   then
     set TEMP"1" to MARC "773" excluding subfields without sorting or default "u|w|x|y|z|9"
     set TEMP"2" to MARC."773" sub without sort or empty "t"
